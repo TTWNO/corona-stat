@@ -1,0 +1,5 @@
+#!/bin/bash
+
+data=$(curl -s "https://corona-stats.online/$1?minimal=true")
+
+test -z "$2" && echo "$data" || echo "$data" | grep "$2" | xargs
